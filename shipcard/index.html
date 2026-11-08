@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShipCard · Before and After cards for build in public</title>
+<meta name="description" content="Drop two screenshots of your product. ShipCard highlights what changed and exports a clean 1200x675 card for X. Runs 100% in your browser.">
+<meta property="og:title" content="ShipCard">
+<meta property="og:description" content="Turn two screenshots into a Before / After card that shows what you shipped. Free, no signup, runs in your browser.">
+<meta property="og:image" content="https://lockdomain.github.io/shipcard/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2310b981'/><path d='M18 34l9 9 19-21' stroke='white' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">✓</span> ShipCard</div>
+  <a class="gh" href="https://github.com/lockdomain/shipcard" target="_blank" rel="noopener">GitHub</a>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Show what you shipped, not what you committed.</h1>
+    <p>Drop a screenshot from before and one from today. ShipCard finds what changed, highlights it and gives you a card ready for X. Nothing leaves your browser.</p>
+  </section>
+
+  <section class="inputs">
+    <label class="drop" id="dropBefore" tabindex="0">
+      <input type="file" accept="image/*" id="fileBefore" hidden>
+      <span class="tag">Before</span>
+      <img alt="" id="thumbBefore" hidden>
+      <span class="hint">Drop, click or paste</span>
+    </label>
+    <label class="drop" id="dropAfter" tabindex="0">
+      <input type="file" accept="image/*" id="fileAfter" hidden>
+      <span class="tag after">After</span>
+      <img alt="" id="thumbAfter" hidden>
+      <span class="hint">Drop, click or paste</span>
+    </label>
+  </section>
+  <div class="row center"><button class="ghost" id="sample">Try with a sample</button></div>
+
+  <section class="editor">
+    <div class="preview">
+      <canvas id="card" width="1200" height="675"></canvas>
+      <div class="stat" id="stat">Add two screenshots to see the diff</div>
+    </div>
+    <aside class="controls">
+      <label>Headline<input id="title" value="Day 12 of building in public" maxlength="60"></label>
+      <label>Handle<input id="handle" value="@you" maxlength="30"></label>
+      <label>Theme
+        <div class="swatches" id="themes"></div>
+      </label>
+      <label class="check"><input type="checkbox" id="highlight" checked> Highlight changes</label>
+      <label>Sensitivity
+        <input type="range" id="sens" min="8" max="80" value="30">
+      </label>
+      <div class="btns">
+        <button id="download" disabled>Download PNG</button>
+        <button class="ghost" id="copy" disabled>Copy image</button>
+      </div>
+      <p class="fine">1200×675 is the size X shows in full in the timeline.</p>
+    </aside>
+  </section>
+</main>
+
+<footer class="foot">Free and open source. Made by <a href="https://x.com/lockdomain" target="_blank" rel="noopener">@lockdomain</a></footer>
+<script src="app.js"></script>
+</body>
+</html>
